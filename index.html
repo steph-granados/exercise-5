@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>exercise 5</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      h1 {
+        font-size: 120px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="flip-text"></h1>
+  </body>
+  <script>
+    let count = 0;
+    let colors = ["#FFB02E", "#FF822D"];
+    let textColors = ["white", "black"];
+    let texts = ["meow 🐱", "rawr 🐯"]; // Texts to be displayed
+
+    document.addEventListener("click", function () {
+      // Change the background color
+      document.body.style.backgroundColor = colors[count % colors.length];
+      // Change the text color of h1 to be opposite
+      document.getElementById("flip-text").style.color =
+        textColors[count % textColors.length];
+      // Change the text of h1
+      document.getElementById("flip-text").textContent =
+        texts[count % texts.length];
+
+      count++;
+    });
+  </script>
+</html>
